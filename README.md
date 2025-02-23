@@ -18,13 +18,13 @@ Data Visualisation: Based on the depth data gathered from MiDaS it overlays a he
 
 ### Conversational Mode (for one-on-one conversations):
 
-_Emotional Recognition:_ Detecting and interpreting the emotional state of individuals in view using facial expression recognition (via FER). The aim is to enhance the quality of social interactions the user has by providing audio cues on the mood of the person in view.
+_Emotional Recognition:_ Detecting and interpreting the emotional state of individuals in view using facial expression recognition (via FER). The aim is to enhance the quality of social interactions the user has by providing audio cues on the mood of the person in view. 
 
 ## How we built it
 
 First, we used OpenCV to capture video and process each frame. We then brought in PyTorch to handle model inference. Our next step was integrating the pre-trained models. For object detection, we selected YOLOv5. This model processes each frame, drawing bounding boxes and calculating confidence scores. We adjusted these detections based on area and proximity to ensure we only alerted the user to important objects. **For depth estimation, we chose MiDaS. We learned to transform each frame into a tensor, run the model, and then resize the output to match the original frame. We used MiDaS to implement data analytics techniques like Convolutional Neural Networks (Uses CNNs to extract hierarchical features from input images) and Regression Techniques(Implements regression to predict continuous depth values for each pixel in the image).**
 
-We then added a text-to-image component using the BLIP captioning model from Salesforce. This model helped us generate a description of what the camera saw. In parallel, we integrated an OCR tool to extract and read any text from the environment. For the emotion detection part, we used a facial emotion recognition model. After YOLO detected a face, this module analysed the facial expression to gauge the emotion.
+We then added a text-to-image component using the BLIP captioning model from Salesforce. This model helped us generate a description of what the camera saw. In parallel, we integrated an OCR tool to extract and read any text from the environment. For the emotion detection part, we used a facial emotion recognition model. After YOLO (dataset) detected a face, this module analysed the facial expression to gauge the emotion. Even here, the code used Convolutional Neural Networks (CNNs) to automatically learn hierarchical feature representations from images. To simplify the data space Principal Component Analysis (PCA) was used to simplify the feature space, which can help in reducing noise and computational load.
 
 The system was designed to run multiple tasks at the same time. We set up separate threads: one that periodically generated audio captions (the captioning loop) and another that constantly monitored depth data to trigger alerts when objects were too close (the depth alert loop). To generate the audio feedback, we used gTTS and played the sound using Pygame’s mixer.
 
