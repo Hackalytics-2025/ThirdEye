@@ -1,10 +1,10 @@
 ## Inspiration
 
-SenseAI was born out of a desire to empower the visually impaired with a tool that enhances situational awareness in real time. Inspired by the challenges faced by the visually impaired, our team aimed to create a system that not only detects objects but also interprets complex environmental cues—transforming visual data into meaningful audio feedback. We were driven by the potential of integrating modern AI and computer vision techniques to improve everyday life and increase independence for users.
+ThirdEye was born out of a desire to empower the visually impaired with a tool that enhances situational awareness in real time. Inspired by the challenges faced by the visually impaired, our team aimed to create a system that not only detects objects but also interprets complex environmental cues—transforming visual data into meaningful audio feedback. We were driven by the potential of integrating modern AI and computer vision techniques to improve everyday life and increase independence for users.
 
 ## What it does
 
-SenseAI functions as an intelligent camera system that actively assists visually impaired users by using multiple modes. The modes are listed below:
+ThirdEye is an intelligent camera system that actively assists visually impaired users using multiple modes. The modes are listed below:
 
 **Explore Mode (when user is interacting with the outside world):**
 
@@ -31,7 +31,7 @@ The system was designed to run multiple tasks at the same time. We set up separa
 Lastly, we incorporated weather data using the Visual Crossing Weather API that we fed to Google’s Gemini. This API fetched current weather conditions, and we then converted that data into natural language advisories, which were also turned into speech.
 
 ## Challenges we ran into
-Building SenseAI was as complicated as we thought it would be. The main challenge we found was combining multiple AI models (each with unique input/output requirements) into a seamless pipeline proved challenging. Finding and integrating the MiDaS model proved to be the biggest obstacle we overcame as it wasn't compatible with data analytics we wanted to run on the depth of the objects to generate the data visualisation in the form of heat maps. Then, once we were able to generate a live heat map on the video feed we encountered the extensive GPU requirements for the project. To ensure minimal latency for time-sensitive audio feedback, we optimised the software for efficient GPU memory utilisation and constrained all integrated AI models within the GPU's capacity. Balancing the sensitivity of object detection, OCR, and facial recognition while minimising false positives and negatives were one of the many other minor errors we dealt with. By tweaking confidence thresholds, trying out different facial expression datasets, we were eventually able to make a reliable project.
+Building ThirdEye was as complicated as we thought it would be. The main challenge we found was combining multiple AI models (each with unique input/output requirements) into a seamless pipeline proved challenging. Finding and integrating the MiDaS model proved to be the biggest obstacle we overcame as it wasn't compatible with data analytics we wanted to run on the depth of the objects to generate the data visualisation in the form of heat maps. Then, once we were able to generate a live heat map on the video feed we encountered the extensive GPU requirements for the project. To ensure minimal latency for time-sensitive audio feedback, we optimised the software for efficient GPU memory utilisation and constrained all integrated AI models within the GPU's capacity. Balancing the sensitivity of object detection, OCR, and facial recognition while minimising false positives and negatives were one of the many other minor errors we dealt with. By tweaking confidence thresholds, trying out different facial expression datasets, we were eventually able to make a reliable project.
 
 ## Accomplishments that we're proud of
 
@@ -41,7 +41,7 @@ Solving the biggest challenge we faced was the biggest achievement for us as a t
 
 We learned that integrating different AI models can be tricky. Each model had its own input and output formats, so getting them to work together required a lot of tweaking. Adapting the MiDaS model for our heat maps taught us how to modify existing architectures to fit our needs. We also discovered how important GPU memory management is. Optimising resource allocation and adjusting model parameters helped us maintain real-time performance. Balancing sensitivity for object detection, OCR, and facial recognition was another key insight. We had to fine-tune thresholds and choose the right datasets to reduce false positives and negatives. Overall, these lessons have given us a solid foundation for future improvements. We now have a better grasp of both the technical challenges and the practical steps needed to create reliable assistive technology.
 
-## What's next for SenseAI
+## What's next for ThirdEye
 
 Since the inception of our idea, there is one thing we yearned for: Lidar (Light Detection and Ranging). This would enable us to get the most accurate depth perception and thus, create the best platform for developing a data analytics model that generates relevant audio feedback. However, this would make a lot of our current code pertaining to depth perception in reference to the camera frame useless :( But if our end goal is building on product viability and reliability, Lidar is the future for us.
 
