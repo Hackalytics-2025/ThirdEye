@@ -6,7 +6,7 @@ ThirdEye was born out of a desire to empower the visually impaired with a tool t
 
 ThirdEye is an intelligent camera system that actively assists visually impaired users using multiple modes. The modes are listed below:
 
-**Explore Mode (when user is interacting with the outside world):**
+### Explore Mode (when user is interacting with the outside world):
 
 _Object Detection & Proximity Alerts:_ Utilising depth recognition (via MiDaS) to identify objects in the live camera feed and warn users if an object is too close. Example: warns user walking on the road, if there's an obstacle like a lamp post in the way.
 
@@ -16,7 +16,7 @@ _Weather Updates:_ Integrating with a weather API (powered by Google Gemini) to 
 
 Data Visualisation: Based on the depth data gathered from MiDaS it overlays a heat map on the video feed to visualise the dynamic depth scores it actively assigns to objects in the surroundings.
 
-**Conversational Mode (for one-on-one conversations):**
+### Conversational Mode (for one-on-one conversations):
 
 _Emotional Recognition:_ Detecting and interpreting the emotional state of individuals in view using facial expression recognition (via FER). The aim is to enhance the quality of social interactions the user has by providing audio cues on the mood of the person in view.
 
